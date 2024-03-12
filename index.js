@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
+const { checkForAuthentication } = require('./middlewares/auth');
 
 const authRouter = require('./routes/auth'); 
 
@@ -16,6 +17,7 @@ mongoose.connect(url)
 })
 
 app.use(express.json());
+app.use(checkForAuthentication);
 
 app.use('/auth', authRouter);
 
