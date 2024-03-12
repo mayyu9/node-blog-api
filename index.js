@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { checkForAuthentication } = require('./middlewares/auth');
 
 const authRouter = require('./routes/auth'); 
+const blogRouter = require('./routes/blog')
 
 const app = express();
 const PORT = 8000;
@@ -20,5 +21,6 @@ app.use(express.json());
 app.use(checkForAuthentication);
 
 app.use('/auth', authRouter);
+app.use('/blog', blogRouter);
 
 app.listen(PORT, () => console.log('server started'))

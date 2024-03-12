@@ -5,7 +5,7 @@ import { validateToken } from '../lib/auth';
 // if the authorisation header is not passed then user is not authenticated return
 // else call the next middle to flow.
 exports.checkForAuthentication = (req, res, next) => {
-    const authorizationHeader = req.header['Authorization'] || req.header['authorization'];
+    const authorizationHeader = req.headers['Authorization'] || req.headers['authorization'];
 
     if(!authorizationHeader) {
         req.user = null;
