@@ -16,3 +16,9 @@ patch based on the id
 delete based on the id:
 
 get the blog id and get the userid
+
+
+ssr+ ejs
+
+for server side rendering we need a templating engine which we can achieve it by ejs.
+

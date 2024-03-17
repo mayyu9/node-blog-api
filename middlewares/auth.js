@@ -1,4 +1,4 @@
-import { validateToken } from '../lib/auth';
+const { validateToken } = require('../lib/auth')
 
 // function acts as middleware to check if the user is having the token.
 // token can be passed as part of header authorisation header
